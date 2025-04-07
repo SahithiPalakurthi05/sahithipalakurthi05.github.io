@@ -3,195 +3,177 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sahithi Palakurthi | Portfolio</title>
+  <title>Sahithi Palakurthi Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
     body {
-      font-family: 'Segoe UI', sans-serif;
       display: flex;
+      font-family: 'Segoe UI', sans-serif;
       height: 100vh;
-      background-color: #f4f4f4;
-      color: #222;
+      overflow: hidden;
     }
     aside {
-      width: 250px;
-      background-color: #1f222e;
-      padding: 2rem;
+      width: 260px;
+      background-color: #1e1e2f;
+      color: white;
       display: flex;
       flex-direction: column;
       align-items: center;
-      border-right: 1px solid #333;
-      color: white;
+      padding: 2rem 1rem;
     }
     aside img {
-      width: 120px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      border: 3px solid #00bcd4;
+      border: 3px solid #fff;
       margin-bottom: 1rem;
       cursor: pointer;
     }
     aside h1 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-      text-align: center;
-      color: #00bcd4;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
       cursor: pointer;
     }
     aside nav {
-      margin-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      width: 100%;
     }
     aside nav a {
-      color: #00bcd4;
+      display: block;
+      color: #ccc;
       text-decoration: none;
-      font-weight: bold;
-      transition: color 0.2s;
-      cursor: pointer;
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+      margin: 0.3rem 0;
+      transition: background 0.3s;
     }
     aside nav a:hover {
-      color: #fff;
+      background-color: #333;
+      color: white;
     }
-    .social-icons {
+    .socials {
       margin-top: auto;
       display: flex;
       gap: 1rem;
     }
-    .social-icons a {
+    .socials a {
+      color: #ccc;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+    .socials a:hover {
       color: #00bcd4;
-      font-size: 1.5rem;
-      transition: color 0.2s;
     }
-    .social-icons a:hover {
-      color: #fff;
-    }
+
     main {
-      flex-grow: 1;
+      flex: 1;
+      background: #f9f9f9 url('https://www.transparenttextures.com/patterns/cubes.png');
       padding: 2rem;
-      background-color: #ffffff;
-      background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
-      background-size: cover;
       overflow-y: auto;
     }
     .typing {
-      font-size: 2rem;
+      font-size: 1.6rem;
+      font-weight: bold;
+      height: 2.5rem;
+      color: #333;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 2px solid #00bcd4;
-      width: 0;
-      animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
-      margin-bottom: 1rem;
-      color: #222;
+      border-right: 2px solid;
+      animation: typing 4s steps(30, end), blink 0.75s step-end infinite;
     }
+
     @keyframes typing {
       from { width: 0 }
       to { width: 100% }
     }
+
     @keyframes blink {
-      50% { border-color: transparent }
+      from, to { border-color: transparent }
+      50% { border-color: black }
     }
-    .content-section {
-      font-size: 1.1rem;
-      margin-top: 1rem;
-      line-height: 1.6;
-      color: #222;
-    }
+
     h2 {
-      margin-top: 2rem;
-      color: #00bcd4;
+      margin-bottom: 1rem;
+      color: #444;
+    }
+    p, li {
+      color: #555;
+      line-height: 1.6;
     }
     ul {
-      margin: 0.5rem 0 1rem 1.2rem;
-    }
-    ul li {
-      margin-bottom: 0.5rem;
+      padding-left: 1rem;
     }
   </style>
-
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
+<body>
 
-<body onload="showHome()">
+<aside>
+  <img src="https://github.com/SahithiPalakurthi05.png" alt="Profile" onclick="showSection('home')" />
+  <h1 onclick="showSection('home')">Sahithi Palakurthi</h1>
+  <nav>
+    <a href="#" onclick="showSection('about')">💡 About Me</a>
+    <a href="#" onclick="showSection('experience')">🧑‍💼 Experience</a>
+    <a href="#" onclick="showSection('education')">🎓 Education</a>
+    <a href="#" onclick="showSection('certifications')">📜 Certifications</a>
+  </nav>
+  <div class="socials">
+    <a href="https://github.com/SahithiPalakurthi05" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/sahithipalakurthi05/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="mailto:sahithipalakurthi05@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+  </div>
+</aside>
 
-  <aside>
-    <img src="https://raw.githubusercontent.com/SahithiPalakurthi05/portfolio/main/Profile.png" alt="Sahithi Palakurthi" onclick="showHome()" />
-    <h1 onclick="showHome()">Sahithi Palakurthi</h1>
-    <nav>
-      <a onclick="showAbout()">💡 About Me</a>
-      <a onclick="showExperience()">🧑‍💼 Experience</a>
-      <a onclick="showEducation()">🎓 Education</a>
-      <a onclick="showCertifications()">📜 Certifications</a>
-    </nav>
-    <div class="social-icons">
-      <a href="https://github.com/SahithiPalakurthi05" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/sahithipalakurthi05/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:sahithipalakurthi05@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-    </div>
-  </aside>
+<main id="main-content">
+  <div id="home">
+    <div class="typing">Hello, I'm Sahithi Palakurthi</div>
+  </div>
 
-  <main id="main-content"></main>
+  <div id="about" style="display:none">
+    <h2>💡 About Me</h2>
+    <p>I am a Program Analyst with hands-on experience in VB.NET and VB6, specializing in maintaining legacy systems and developing automation tools.</p>
+    <p>Efficient in LMSi, TV Prod, SQL Server, and Visual Studio with proven problem-solving skills and collaborative mindset.</p>
+  </div>
 
-  <script>
-    function showHome() {
-      const main = document.getElementById('main-content');
-      main.innerHTML = `
-        <div class="typing">Hello, I'm Sahithi Palakurthi</div>
-        <div class="content-section">
-          <p>I’m a Program Analyst specializing in VB.NET & VB6, passionate about automating legacy systems and driving impactful changes through code.</p>
-        </div>
-      `;
-    }
+  <div id="experience" style="display:none">
+    <h2>🧑‍💼 Experience</h2>
+    <ul>
+      <li><strong>Program Analyst – Cognizant</strong><br>Dec 2022 – Present (2 yrs 5 mos)</li>
+      <li><strong>Intern – Cognizant</strong><br>Jan 2022 – Jun 2022 (6 mos)</li>
+    </ul>
+  </div>
 
-    function showAbout() {
-      const main = document.getElementById('main-content');
-      main.innerHTML = `
-        <h2>💡 About Me</h2>
-        <div class="content-section">
-          <p>Experienced professional with two years of hands-on expertise in VB.NET and VB6, specializing in conducting comprehensive gap analyses to bridge business requirements and implement enhancements effectively.</p>
-          <p>Proficient in LMSi and TV Prod applications, MS SQL Server, and Visual Studio. Efficient in managing and resolving issues through a ticketing system. Committed to continuous learning and teamwork.</p>
-        </div>
-      `;
-    }
+  <div id="education" style="display:none">
+    <h2>🎓 Education</h2>
+    <ul>
+      <li>Bachelor's Degree – Computer Science (details can be added here)</li>
+    </ul>
+  </div>
 
-    function showExperience() {
-      const main = document.getElementById('main-content');
-      main.innerHTML = `
-        <h2>🧑‍💼 Experience</h2>
-        <ul>
-          <li><strong>Program Analyst - Cognizant</strong><br>Dec 2022 – Present · 2 yrs 5 mos</li>
-          <li><strong>Intern - Cognizant</strong><br>Jan 2022 – Jun 2022 · 6 mos</li>
-        </ul>
-      `;
-    }
+  <div id="certifications" style="display:none">
+    <h2>📜 Certifications</h2>
+    <ul>
+      <li>Gen AI Specialization</li>
+      <li>Prompt Engineering</li>
+      <li>Other project and process-based recognitions</li>
+    </ul>
+  </div>
+</main>
 
-    function showEducation() {
-      const main = document.getElementById('main-content');
-      main.innerHTML = `
-        <h2>🎓 Education</h2>
-        <ul>
-          <li><strong>B.Tech in [Your Branch]</strong> – [Your University], Hyderabad</li>
-          <li>Graduated: [Year]</li>
-        </ul>
-      `;
-    }
+<script>
+  function showSection(id) {
+    const sections = ['home', 'about', 'experience', 'education', 'certifications'];
+    sections.forEach(sec => {
+      document.getElementById(sec).style.display = sec === id ? 'block' : 'none';
+    });
+  }
 
-    function showCertifications() {
-      const main = document.getElementById('main-content');
-      main.innerHTML = `
-        <h2>📜 Certifications</h2>
-        <ul>
-          <li>Gen AI Specialization</li>
-          <li>Prompt Engineering Certification</li>
-        </ul>
-      `;
-    }
-  </script>
+  // Load home by default
+  window.onload = () => showSection('home');
+</script>
 
 </body>
 </html>
