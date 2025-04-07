@@ -31,10 +31,14 @@
       border-radius: 50%;
       border: 3px solid #00bcd4;
       margin-bottom: 1rem;
+      cursor: pointer;
     }
     aside h1 {
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
+      text-align: center;
+      color: #00bcd4;
+      cursor: pointer;
     }
     aside nav {
       margin-top: 2rem;
@@ -47,6 +51,7 @@
       text-decoration: none;
       font-weight: bold;
       transition: color 0.2s;
+      cursor: pointer;
     }
     aside nav a:hover {
       color: #fff;
@@ -66,6 +71,7 @@
       position: relative;
       background-image: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(to bottom, #0f1117, #1f222e);
       background-size: cover;
+      overflow-y: auto;
     }
     .typing {
       font-size: 2rem;
@@ -88,6 +94,16 @@
       margin-top: 1rem;
       line-height: 1.6;
     }
+    h2 {
+      margin-top: 2rem;
+      color: #00bcd4;
+    }
+    ul {
+      margin: 0.5rem 0 1rem 1.2rem;
+    }
+    ul li {
+      margin-bottom: 0.5rem;
+    }
   </style>
 
   <!-- Font Awesome for social icons -->
@@ -97,16 +113,15 @@
 <body onload="showHome()">
 
   <aside>
-    <img src="https://raw.githubusercontent.com/SahithiPalakurthi05/portfolio/main/Profile.png" alt="Sahithi Palakurthi" />
-    <h1>Sahithi Palakurthi</h1>
+    <img src="https://raw.githubusercontent.com/SahithiPalakurthi05/portfolio/main/Profile.png" alt="Sahithi Palakurthi" onclick="showHome()" />
+    <h1 onclick="showHome()">Sahithi Palakurthi</h1>
     <nav>
-      <a href="#" onclick="showHome()">Home</a>
-      <a href="#" onclick="showAbout()">About Me</a>
+      <a onclick="showAbout()">About Me</a>
     </nav>
     <div class="social-icons">
       <a href="https://github.com/SahithiPalakurthi05" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://www.linkedin.com/in/sahithipalakurthi05/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:sahithipakakurthi05@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+      <a href="mailto:sahithipalakurthi05@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
     </div>
   </aside>
 
@@ -131,9 +146,26 @@
         <h2>💡 About Me</h2>
         <div class="content-section">
           <p>Experienced professional with two years of hands-on expertise in VB.NET and VB6, specializing in conducting comprehensive gap analyses to bridge business requirements and implement enhancements effectively.</p>
-          <p>Proficient in LMSi and TV Prod applications, MS SQL Server, and Visual Studio. Efficient in managing and resolving issues through a ticketing system.</p>
-          <p>Strong understanding of business process functionalities and committed to continuous learning and teamwork to drive project success.</p>
+          <p>Proficient in LMSi and TV Prod applications, MS SQL Server, and Visual Studio. Efficient in managing and resolving issues through a ticketing system. Committed to continuous learning and teamwork.</p>
         </div>
+
+        <h2>🧑‍💼 Experience</h2>
+        <ul>
+          <li><strong>Program Analyst - Cognizant</strong><br>Dec 2022 – Present · 2 yrs 5 mos</li>
+          <li><strong>Intern - Cognizant</strong><br>Jan 2022 – Jun 2022 · 6 mos</li>
+        </ul>
+
+        <h2>🎓 Education</h2>
+        <ul>
+          <li><strong>B.Tech in [Your Branch]</strong> – [Your University], Hyderabad</li>
+          <li>Graduated: [Year]</li>
+        </ul>
+
+        <h2>📜 Certifications</h2>
+        <ul>
+          <li>Gen AI Specialization</li>
+          <li>Prompt Engineering Certification</li>
+        </ul>
       `;
     }
   </script>
