@@ -2,52 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sahithi Palakurthi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet" />
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
-      font-family: 'Inter', sans-serif;
       height: 100vh;
       overflow: hidden;
     }
-    .sidebar {
-      width: 300px;
+    .left {
+      width: 30%;
       background: #1e1e2f;
-      color: white;
+      color: #fff;
+      padding: 2rem 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem 1rem;
     }
-    .sidebar img {
-      width: 100px;
+    .left img {
+      width: 120px;
       border-radius: 50%;
-      border: 2px solid white;
+      border: 3px solid #fff;
+      margin-bottom: 1rem;
     }
-    .sidebar h1 {
-      margin: 1rem 0 0.5rem;
-      font-size: 1.5rem;
+    .name {
+      font-size: 1.4rem;
+      font-weight: bold;
       cursor: pointer;
     }
     .socials {
-      margin-bottom: 2rem;
+      display: flex;
+      gap: 1rem;
+      margin: 0.5rem 0 2rem;
     }
     .socials a {
-      margin: 0 0.5rem;
-      color: white;
+      color: #00bcd4;
       font-size: 1.5rem;
       text-decoration: none;
     }
     nav {
+      margin-top: 1rem;
       width: 100%;
-      margin-top: 2rem;
     }
     nav ul {
       list-style: none;
@@ -56,147 +57,141 @@
     }
     nav li {
       padding: 1rem;
-      text-align: center;
       cursor: pointer;
-      transition: background 0.3s;
+      text-align: center;
+      border-bottom: 1px solid #333;
     }
     nav li:hover {
-      background: #333;
+      background: #2e2e4f;
     }
     .footer {
       margin-top: auto;
       font-size: 0.8rem;
-      color: #aaa;
+      color: #ccc;
       text-align: center;
     }
-    .main-content {
-      flex: 1;
-      background: #f9f9f9;
+    .right {
+      width: 70%;
       padding: 2rem;
+      background: #f4f4f4;
       overflow-y: auto;
-      position: relative;
     }
-    .typing-text {
+    .typing {
       font-size: 2rem;
       font-weight: bold;
-      height: 3rem;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #333;
+      width: fit-content;
     }
-    .cursor {
-      display: inline-block;
-      width: 2px;
-      height: 1.5rem;
-      background-color: black;
-      margin-left: 3px;
-      animation: blink 0.7s infinite;
+    .section {
+      display: none;
     }
-    @keyframes blink {
-      0% { opacity: 1; }
-      50% { opacity: 0; }
-      100% { opacity: 1; }
+    .section.active {
+      display: block;
     }
   </style>
 </head>
 <body>
-  <div class="sidebar">
-    <img src="https://raw.githubusercontent.com/SahithiPalakurthi05/SahithiPalakurthi05/main/Profile.png" alt="Sahithi Palakurthi">
-    <h1 onclick="showSection('home')">Sahithi Palakurthi</h1>
-    <div class="socials">
-      <a href="https://github.com/SahithiPalakurthi05" target="_blank">&#x1F5C3;</a>
-      <a href="https://www.linkedin.com/in/sahithipalakurthi05/" target="_blank">&#x1F465;</a>
-      <a href="mailto:sahithipakakurthi05@gmail.com" target="_blank">&#x2709;&#xFE0F;</a>
-    </div>
-    <nav>
-      <ul>
-        <li onclick="showSection('experience')">🧑‍💼 Experience</li>
-        <li onclick="showSection('skills')">🔧 Skills & Interests</li>
-        <li onclick="showSection('education')">🎓 Education</li>
-        <li onclick="showSection('certifications')">📜 Certifications</li>
-      </ul>
-    </nav>
-    <div class="footer">
-      <p>Developed by Sahithi Palakurthi</p>
-      <p>&copy; 2025 All rights reserved.</p>
-    </div>
+
+<div class="left">
+  <img src="https://raw.githubusercontent.com/SahithiPalakurthi05/Profile.png" alt="Sahithi Palakurthi">
+  <div class="name" onclick="showSection('home')">Sahithi Palakurthi</div>
+  <div class="socials">
+    <a href="https://github.com/SahithiPalakurthi05" target="_blank">🐱</a>
+    <a href="https://www.linkedin.com/in/sahithipalakurthi05/" target="_blank">🔗</a>
+    <a href="mailto:sahithipakakurthi05@gmail.com" target="_blank">✉️</a>
+  </div>
+  <nav>
+    <ul>
+      <li onclick="showSection('experience')">🧑‍💼 Experience</li>
+      <li onclick="showSection('skills')">🛠️ Skills & Interests</li>
+      <li onclick="showSection('education')">🎓 Education</li>
+      <li onclick="showSection('certifications')">📜 Certifications</li>
+    </ul>
+  </nav>
+  <div class="footer">
+    Developed by Sahithi Palakurthi<br>
+    &copy; 2025
+  </div>
+</div>
+
+<div class="right">
+  <div id="home" class="section active">
+    <div id="typing" class="typing"></div>
+    <p style="margin-top:2rem;">
+      Experienced professional with two years of hands-on expertise in VB.NET and VB6,
+      specializing in conducting comprehensive gap analyses to bridge business requirements
+      and implement enhancements effectively.<br><br>
+      Proficient in LMSi and TV Prod applications, MS SQL Server, and Visual Studio.
+      Efficient in managing and resolving issues through a ticketing system.
+    </p>
   </div>
 
-  <div class="main-content" id="main-content">
-    <div class="typing-text">
-      <span id="typing"></span><span class="cursor"></span>
-    </div>
-    <div id="section-content"></div>
+  <div id="experience" class="section">
+    <h2>🧑‍💼 Experience</h2>
+    <ul>
+      <li><strong>Program Analyst - Cognizant</strong><br>Dec 2022 – Present · 2 yrs 5 mos</li>
+      <li><strong>Intern - Cognizant</strong><br>Jan 2022 – Jun 2022 · 6 mos</li>
+    </ul>
   </div>
 
-  <script>
-    const typingElement = document.getElementById("typing");
-    const text = "Hello, I'm Sahithi Palakurthi";
-    let index = 0;
-    let isDeleting = false;
+  <div id="skills" class="section">
+    <h2>🛠️ Skills & Interests</h2>
+    <ul>
+      <li>VB.Net | VB6 | MS SQL Server | Crystal Reports | Excel Automation | Visual Studio</li>
+      <li>Automation | Debugging | UI Enhancements | Learning New Technologies</li>
+    </ul>
+  </div>
 
-    function typeLoop() {
-      if (!isDeleting) {
-        typingElement.textContent = text.substring(0, index + 1);
-        index++;
-        if (index === text.length) {
-          setTimeout(() => {
-            isDeleting = true;
-            typeLoop();
-          }, 2000);
-        } else {
-          setTimeout(typeLoop, 120);
-        }
-      } else {
-        typingElement.textContent = text.substring(0, index - 1);
-        index--;
-        if (index === 0) {
-          isDeleting = false;
-          setTimeout(typeLoop, 1000);
-        } else {
-          setTimeout(typeLoop, 60);
-        }
+  <div id="education" class="section">
+    <h2>🎓 Education</h2>
+    <p>B.Tech - Computer Science & Engineering<br>JNTUH - Hyderabad</p>
+  </div>
+
+  <div id="certifications" class="section">
+    <h2>📜 Certifications</h2>
+    <ul>
+      <li>Gen AI Specialization - Prompt Engineering</li>
+      <li>Gen AI Fundamentals & Implementation</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  // Typing effect
+  const typingElement = document.getElementById("typing");
+  const text = "Hello, I'm Sahithi Palakurthi";
+  let index = 0;
+  let isDeleting = false;
+
+  function typeLoop() {
+    if (!isDeleting) {
+      typingElement.textContent = text.substring(0, index + 1);
+      index++;
+      if (index === text.length) {
+        isDeleting = true;
+        setTimeout(typeLoop, 2000); // Wait before deleting
+        return;
+      }
+    } else {
+      typingElement.textContent = text.substring(0, index - 1);
+      index--;
+      if (index === 0) {
+        isDeleting = false;
       }
     }
-    typeLoop();
+    setTimeout(typeLoop, isDeleting ? 50 : 100);
+  }
+  typeLoop();
 
-    function showSection(section) {
-      const content = document.getElementById("section-content");
-      let html = "";
-      switch (section) {
-        case "experience":
-          html = `
-            <h2>🧑‍💼 Experience</h2>
-            <ul>
-              <li><strong>Program Analyst - Cognizant</strong><br>Dec 2022 – Present · 2 yrs 5 mos</li>
-              <li><strong>Intern - Cognizant</strong><br>Jan 2022 – Jun 2022 · 6 mos</li>
-            </ul>
-          `;
-          break;
-        case "skills":
-          html = `
-            <h2>🔧 Skills & Interests</h2>
-            <p>VB.Net, VB6, MS SQL Server, LMSi, TV Prod, Crystal Reports, Excel Automation, Visual Studio</p>
-          `;
-          break;
-        case "education":
-          html = `
-            <h2>🎓 Education</h2>
-            <p>Bachelor of Technology - Computer Science</p>
-          `;
-          break;
-        case "certifications":
-          html = `
-            <h2>📜 Certifications</h2>
-            <ul>
-              <li>Gen AI Specialization - Prompt Engineering</li>
-              <li>Automation Tools for LMSi</li>
-            </ul>
-          `;
-          break;
-        default:
-          html = "";
-      }
-      content.innerHTML = html;
-    }
-    showSection("home");
-  </script>
+  // Section switching
+  function showSection(sectionId) {
+    const sections = document.querySelectorAll(".section");
+    sections.forEach(sec => sec.classList.remove("active"));
+    document.getElementById(sectionId).classList.add("active");
+  }
+</script>
+
 </body>
 </html>
