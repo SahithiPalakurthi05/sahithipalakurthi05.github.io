@@ -1,83 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sahithi Palakurthi | Program Analyst</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #333;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #1e1e2f;
-      color: white;
-      padding: 2rem 0;
-    }
-    img {
-      width: 150px;
-      border-radius: 50%;
-    }
-    h1 {
-      margin: 1rem 0 0.5rem;
-    }
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #0077b5;
-    }
-    section {
-      padding: 2rem;
-    }
-    footer {
-      background: #222;
-      color: #aaa;
-      padding: 1rem 0;
-    }
-  </style>
-</head>
-<body>
+import { Card } from "@/components/ui/card";
+import { Mail, Github, Linkedin } from "lucide-react";
 
-<header>
-  <img src="Github Profile.png" alt="Sahithi Palakurthi" />
-  <h1>Sahithi Palakurthi</h1>
-  <p>Program Analyst | VB.Net & VB6 Developer</p>
-  <nav>
-    <a href="https://github.com/SahithiPalakurthi05">GitHub</a>
-    <a href="https://www.linkedin.com/in/sahithipalakurthi05/">LinkedIn</a>
-  </nav>
-</header>
+export default function Home() {
+  return (
+    <div className="flex min-h-screen">
+      {/* Sidebar */}
+      <div className="w-72 bg-gray-800 text-white flex flex-col items-center p-6">
+        <img
+          src="/profile.jpg"
+          alt="Sahithi Palakurthi"
+          className="w-40 h-40 rounded-full object-cover border-4 border-white mb-4"
+        />
+        <h1 className="text-xl font-bold text-center">Sahithi Palakurthi <span className="text-sm font-normal">(They/Them)</span></h1>
+        <p className="text-sm text-gray-300 mt-1 text-center">Program Analyst | VB.Net & VB6</p>
+        <p className="text-xs text-green-400 mt-1">#OpenToWork</p>
+        <p className="text-xs text-gray-400 text-center mt-1">Hyderabad, Telangana, India</p>
 
-<section>
-  <h2>💡 About Me</h2>
-  <p>I’m a Program Analyst specializing in building and maintaining VB.Net and VB6 applications. Passionate about solving legacy issues and making systems smarter.</p>
-</section>
+        <div className="flex space-x-4 mt-4">
+          <a href="https://www.linkedin.com/in/sahithipalakurthi05/" target="_blank">
+            <Linkedin className="w-6 h-6 hover:text-blue-500" />
+          </a>
+          <a href="https://github.com/SahithiPalakurthi05" target="_blank">
+            <Github className="w-6 h-6 hover:text-gray-400" />
+          </a>
+          <a href="mailto:sahithipakakurthi05@gmail.com">
+            <Mail className="w-6 h-6 hover:text-red-400" />
+          </a>
+        </div>
 
-<section>
-  <h2>🛠 Skills</h2>
-  <p>VB.Net | VB6 | SQL | Crystal Reports | Excel Automation | Visual Studio</p>
-</section>
+        <nav className="mt-10 space-y-4 text-center">
+          <a href="#home" className="block hover:text-cyan-400">Home</a>
+          <a href="#about" className="block hover:text-cyan-400">About Me</a>
+          <a href="#experience" className="block hover:text-cyan-400">Experience</a>
+          <a href="#portfolio" className="block hover:text-cyan-400">Portfolio</a>
+          <a href="#achievements" className="block hover:text-cyan-400">Achievements</a>
+          <a href="#contact" className="block hover:text-cyan-400">Contact</a>
+        </nav>
 
-<section>
-  <h2>📂 Projects</h2>
-  <ul>
-    <li>Dunning Control Automation – Improved accuracy and turnaround time.</li>
-    <li>Contract Expiry Tracker – Automated contract status transitions.</li>
-  </ul>
-</section>
+        <footer className="mt-auto text-xs text-center pt-6">
+          <p>© Copyright 2024</p>
+          <p>
+            Designed By <span className="text-cyan-400">Sahithi Palakurthi</span>
+          </p>
+        </footer>
+      </div>
 
-<section>
-  <h2>📫 Contact</h2>
-  <p>Connect with me on <a href="https://www.linkedin.com/in/sahithipalakurthi05/">LinkedIn</a></p>
-</section>
+      {/* Main content */}
+      <div className="flex-1 bg-gray-900 text-white p-10 overflow-y-auto">
+        <section id="home" className="min-h-screen flex flex-col justify-center">
+          <h2 className="text-4xl md:text-6xl font-bold mb-4">Hi, This is</h2>
+          <h1 className="text-5xl md:text-7xl font-extrabold text-cyan-400 mb-4">
+            Sahithi Palakurthi
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300">
+            I'm a Program Analyst specializing in VB.Net & VB6
+          </p>
+        </section>
 
-<footer>
-  <p>&copy; 2025 Sahithi Palakurthi. All rights reserved.</p>
-</footer>
+        <section id="about" className="mt-20">
+          <h2 className="text-3xl font-bold mb-4">About Me</h2>
+          <p className="text-gray-300 leading-relaxed space-y-4">
+            <span className="block mb-4">Experienced professional with two years of hands-on expertise in VB.NET and VB6, specializing in conducting comprehensive gap analyses to bridge business requirements and implement enhancements effectively.</span>
+            <span className="block mb-4">Proficient in utilizing LMSi and TV Prod applications, as well as tools such as MS SQL Server and Visual Studio. Proven track record of efficiently managing and resolving issues through a ticketing system.</span>
+            <span className="block mb-4">Strong understanding of business process functionalities, contributing to a solid domain knowledge base. Committed to continuous learning and collaboration with teams to drive successful project outcomes.</span>
+            <span className="block">Thank you for considering my profile; I am dedicated to aligning with future project visions and delivering impactful results.</span>
+          </p>
+        </section>
 
-</body>
-</html>
+        <section id="experience" className="mt-20">
+          <h2 className="text-3xl font-bold mb-4">Experience</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-xl font-semibold">Program Analyst - Cognizant</h3>
+              <p className="text-gray-400 text-sm">Dec 2022 - Present · 2 yrs 5 mos</p>
+              <p className="text-gray-400 text-sm mb-2">Hyderabad, Telangana, India</p>
+              <ul className="list-disc ml-5 text-gray-300 text-sm">
+                <li>Working full-time as a Program Analyst with focus on VB.NET and VB6.</li>
+                <li>Skilled in Visual Basic, MS SQL Server, Visual Studio, LMSi, and TV Prod applications.</li>
+                <li>Resolved complex issues via ticketing systems, enhancing system performance.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold">Intern - Cognizant</h3>
+              <p className="text-gray-400 text-sm">Jan 2022 - Jun 2022 · 6 mos</p>
+              <ul className="list-disc ml-5 text-gray-300 text-sm">
+                <li>Trained on VB.NET, Visual Studio, and related tools.</li>
+                <li>Gained domain knowledge and hands-on experience with real-time systems.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  );
+}
