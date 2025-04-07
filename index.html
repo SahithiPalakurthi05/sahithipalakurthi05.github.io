@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sahithi Palakurthi | Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     * {
       box-sizing: border-box;
@@ -12,147 +11,132 @@
       padding: 0;
     }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
+      font-family: 'Segoe UI', sans-serif;
       display: flex;
-      min-height: 100vh;
+      height: 100vh;
+      background-color: #0f1117;
+      color: #ffffff;
     }
     aside {
-      width: 280px;
-      background-color: #5e6f81;
-      color: #fff;
-      padding: 2rem 1rem;
+      width: 250px;
+      background-color: #1f222e;
+      padding: 2rem;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      position: fixed;
-      height: 100vh;
+      align-items: center;
+      border-right: 1px solid #333;
     }
-    .profile-img {
+    aside img {
       width: 120px;
-      height: 120px;
       border-radius: 50%;
-      border: 4px solid white;
+      border: 3px solid #00bcd4;
       margin-bottom: 1rem;
     }
-    .name {
+    aside h1 {
       font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    aside nav {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    aside nav a {
+      color: #00bcd4;
+      text-decoration: none;
       font-weight: bold;
-      text-align: center;
-      margin-bottom: 1rem;
+      transition: color 0.2s;
+    }
+    aside nav a:hover {
+      color: #fff;
+    }
+    .social-icons {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
     }
     .social-icons a {
-      margin: 0 0.4rem;
-      color: #fff;
-      text-decoration: none;
+      color: #00bcd4;
       font-size: 1.5rem;
     }
-    .nav-links {
-      margin-top: 2rem;
-    }
-    .nav-links a {
-      display: block;
-      color: #fff;
-      text-decoration: none;
-      padding: 0.6rem 1rem;
-      font-size: 1rem;
-      transition: background 0.3s;
-    }
-    .nav-links a:hover {
-      background-color: #4c5a6a;
-    }
-    .footer {
-      font-size: 0.8rem;
-      text-align: center;
-      margin-top: 2rem;
-    }
-    .footer a {
-      color: #aadfff;
-      text-decoration: none;
-    }
     main {
-      margin-left: 280px;
-      flex: 1;
+      flex-grow: 1;
       padding: 2rem;
-      background-color: #fff;
-    }
-    #main-content {
-      font-size: 1.3rem;
-      white-space: pre-wrap;
+      position: relative;
+      background-image: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(to bottom, #0f1117, #1f222e);
+      background-size: cover;
     }
     .typing {
-      border-right: .1em solid #000;
+      font-size: 2rem;
       white-space: nowrap;
       overflow: hidden;
-      animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
+      border-right: 2px solid #00bcd4;
+      width: 0;
+      animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
+      margin-bottom: 1rem;
     }
     @keyframes typing {
       from { width: 0 }
       to { width: 100% }
     }
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: black; }
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+    .content-section {
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      line-height: 1.6;
     }
   </style>
+
+  <!-- Font Awesome for social icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body>
 
-<aside>
-  <div>
-    <img src="profile.jpg" alt="Sahithi Palakurthi" class="profile-img" />
-    <div class="name">Sahithi Palakurthi</div>
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/in/sahithipalakurthi05/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/SahithiPalakurthi05" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-      <a href="mailto:sahithipalakurthi05@gmail.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
-    </div>
-    <nav class="nav-links">
-      <a href="#" onclick="showHome()"><i class="fas fa-home"></i> Home</a>
-      <a href="#" onclick="showAboutMe()"><i class="fas fa-user"></i> About Me</a>
+<body onload="showHome()">
+
+  <aside>
+    <img src="https://raw.githubusercontent.com/SahithiPalakurthi05/portfolio/main/Profile.png" alt="Sahithi Palakurthi" />
+    <h1>Sahithi Palakurthi</h1>
+    <nav>
+      <a href="#" onclick="showHome()">Home</a>
+      <a href="#" onclick="showAbout()">About Me</a>
     </nav>
-  </div>
-  <div class="footer">
-    &copy; 2025 Designed by <a href="#">Sahithi Palakurthi</a>
-  </div>
-</aside>
+    <div class="social-icons">
+      <a href="https://github.com/SahithiPalakurthi05" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/sahithipalakurthi05/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:sahithipakakurthi05@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+    </div>
+  </aside>
 
-<main>
-  <div id="main-content"></div>
-</main>
+  <main id="main-content">
+    <!-- Dynamic content will appear here -->
+  </main>
 
-<script>
-  function showHome() {
-    const text = "Hello I'm Sahithi Palakurthi";
-    const container = document.getElementById('main-content');
-    container.textContent = '';
-    let i = 0;
-    const interval = setInterval(() => {
-      container.textContent += text.charAt(i);
-      i++;
-      if (i > text.length) clearInterval(interval);
-    }, 100);
-  }
+  <script>
+    function showHome() {
+      const main = document.getElementById('main-content');
+      main.innerHTML = `
+        <div class="typing">Hello, I'm Sahithi Palakurthi</div>
+        <div class="content-section">
+          <p>I’m a Program Analyst specializing in VB.NET & VB6, passionate about automating legacy systems and driving impactful changes through code.</p>
+        </div>
+      `;
+    }
 
-  function showAboutMe() {
-    document.getElementById('main-content').innerHTML = `
-      <h2>About Me</h2>
-      <p>
-        Experienced professional with two years of hands-on expertise in VB.NET and VB6,
-        specializing in conducting comprehensive gap analyses to bridge business requirements
-        and implement enhancements effectively.
-      </p>
-      <p>
-        Proficient in LMSi and TV Prod applications, MS SQL Server, and Visual Studio.
-        Efficient in managing and resolving issues through a ticketing system.
-      </p>
-      <p>
-        Strong understanding of business process functionalities and committed to continuous
-        learning and teamwork to drive project success.
-      </p>
-    `;
-  }
-</script>
+    function showAbout() {
+      const main = document.getElementById('main-content');
+      main.innerHTML = `
+        <h2>💡 About Me</h2>
+        <div class="content-section">
+          <p>Experienced professional with two years of hands-on expertise in VB.NET and VB6, specializing in conducting comprehensive gap analyses to bridge business requirements and implement enhancements effectively.</p>
+          <p>Proficient in LMSi and TV Prod applications, MS SQL Server, and Visual Studio. Efficient in managing and resolving issues through a ticketing system.</p>
+          <p>Strong understanding of business process functionalities and committed to continuous learning and teamwork to drive project success.</p>
+        </div>
+      `;
+    }
+  </script>
 
 </body>
 </html>
