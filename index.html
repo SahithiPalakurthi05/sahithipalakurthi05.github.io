@@ -97,21 +97,11 @@
       white-space: nowrap;
       overflow: hidden;
       border-right: 2px solid;
-      animation: typing 4s steps(30, end), blink 0.75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @keyframes blink {
-      from, to { border-color: transparent }
-      50% { border-color: black }
+      width: 0;
     }
 
     h2 {
-      margin-bottom: 1rem;
+      margin: 1.5rem 0 1rem;
       color: #444;
     }
     p, li {
@@ -137,7 +127,7 @@
 
   <nav>
     <a href="#" onclick="showSection('experience')">🧑‍💼 Experience</a>
-    <a href="#" onclick="showSection('skills')">🛠️ Skills & Interests</a>
+    <a href="#" onclick="showSection('skills')">💻 Skills & Interests</a>
     <a href="#" onclick="showSection('education')">🎓 Education</a>
     <a href="#" onclick="showSection('certifications')">📜 Certifications</a>
   </nav>
@@ -150,28 +140,27 @@
 
 <main id="main-content">
   <div id="home">
-    <div class="typing">Hello, I'm Sahithi Palakurthi</div>
-    <br/>
-    --<h2>💡 About Me</h2>
+    <div class="typing" id="typing-text"></div>
+    <h2>💡 About Me</h2>
     <p>I am a Program Analyst with hands-on experience in VB.NET and VB6, specializing in maintaining legacy systems and developing automation tools.</p>
-    <p>Efficient in LMSi, TV Prod, SQL Server, and Visual Studio with proven problem-solving skills and a collaborative mindset.</p>
+    <p>Efficient in LMSi, TV Prod, SQL Server, and Visual Studio with proven problem-solving skills and collaborative mindset.</p>
   </div>
 
   <div id="experience" style="display:none">
     <h2>🧑‍💼 Experience</h2>
     <ul>
-      <li><strong>Program Analyst – Cognizant</strong><br>Dec 2022 – Present</li>
-      <li><strong>Intern – Cognizant</strong><br>Jan 2022 – Jun 2022</li>
+      <li><strong>Program Analyst – Cognizant</strong><br>Dec 2022 – Present (2 yrs 5 mos)</li>
+      <li><strong>Intern – Cognizant</strong><br>Jan 2022 – Jun 2022 (6 mos)</li>
     </ul>
   </div>
 
   <div id="skills" style="display:none">
-    <h2>🛠️ Skills & Interests</h2>
+    <h2>💻 Skills & Interests</h2>
     <ul>
       <li>VB.NET, VB6, SQL Server</li>
-      <li>Legacy System Maintenance</li>
-      <li>Automation and Optimization</li>
-      <li>Learning new technologies, AI & Prompt Engineering</li>
+      <li>Automation Tools, LMSi, TV Prod</li>
+      <li>Creative problem solving, Debugging legacy code</li>
+      <li>Exploring AI and building personal projects</li>
     </ul>
   </div>
 
@@ -193,6 +182,28 @@
 </main>
 
 <script>
+  const text = "Hello, I'm Sahithi Palakurthi ";
+  const typingElement = document.getElementById("typing-text");
+
+  let index = 0;
+  let isDeleting = false;
+
+  function type() {
+    typingElement.textContent = text.substring(0, index);
+    typingElement.style.borderRight = "2px solid black";
+
+    if (!isDeleting && index < text.length) {
+      index++;
+      setTimeout(type, 100);
+    } else if (isDeleting && index > 0) {
+      index--;
+      setTimeout(type, 50);
+    } else {
+      isDeleting = !isDeleting;
+      setTimeout(type, isDeleting ? 1000 : 2000);
+    }
+  }
+
   function showSection(id) {
     const sections = ['home', 'experience', 'skills', 'education', 'certifications'];
     sections.forEach(sec => {
@@ -200,8 +211,10 @@
     });
   }
 
-  // Load home by default
-  window.onload = () => showSection('home');
+  window.onload = () => {
+    showSection('home');
+    type();
+  }
 </script>
 
 </body>
