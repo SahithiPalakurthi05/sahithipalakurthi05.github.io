@@ -128,7 +128,7 @@
 <aside>
   <img src="https://github.com/SahithiPalakurthi05.png" alt="Profile" onclick="showSection('home')" />
   <h1 onclick="showSection('home')">Sahithi Palakurthi</h1>
-  
+
   <div class="socials-top">
     <a href="https://github.com/SahithiPalakurthi05" target="_blank"><i class="fab fa-github"></i></a>
     <a href="https://www.linkedin.com/in/sahithipalakurthi05/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -138,6 +138,8 @@
   <nav>
     <a href="#" onclick="showSection('about')">💡 About Me</a>
     <a href="#" onclick="showSection('experience')">🧑‍💼 Experience</a>
+    <a href="#" onclick="showSection('skills')">🛠️ Skills</a>
+    <a href="#" onclick="showSection('interests')">🎯 Interests</a>
     <a href="#" onclick="showSection('education')">🎓 Education</a>
     <a href="#" onclick="showSection('certifications')">📜 Certifications</a>
   </nav>
@@ -167,6 +169,27 @@
     </ul>
   </div>
 
+  <div id="skills" style="display:none">
+    <h2>🛠️ Skills</h2>
+    <ul>
+      <li>VB.NET, VB6</li>
+      <li>SQL Server</li>
+      <li>Visual Studio</li>
+      <li>Automation Scripting</li>
+      <li>Prompt Engineering</li>
+    </ul>
+  </div>
+
+  <div id="interests" style="display:none">
+    <h2>🎯 Interests</h2>
+    <ul>
+      <li>AI and Machine Learning</li>
+      <li>Web Development</li>
+      <li>Open Source Contribution</li>
+      <li>Problem Solving and Logic Puzzles</li>
+    </ul>
+  </div>
+
   <div id="education" style="display:none">
     <h2>🎓 Education</h2>
     <ul>
@@ -186,7 +209,7 @@
 
 <script>
   function showSection(id) {
-    const sections = ['home', 'about', 'experience', 'education', 'certifications'];
+    const sections = ['home', 'about', 'experience', 'skills', 'interests', 'education', 'certifications'];
     sections.forEach(sec => {
       document.getElementById(sec).style.display = sec === id ? 'block' : 'none';
     });
