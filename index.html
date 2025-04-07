@@ -106,7 +106,7 @@
     <ul>
       <li onclick="showSection('experience')">🧑‍💼 Experience</li>
       <li onclick="showSection('education')">🎓 Education</li>
-      <li onclick="showSection('skills')">💡 Skills & Interests</li>
+      <li onclick="showSection('skills')">🛠️ Skills & Interests</li>
       <li onclick="showSection('certifications')">📜 Certifications</li>
     </ul>
   </nav>
@@ -142,7 +142,7 @@
   </div>
 
   <div id="skills" class="section">
-    <h2>💡 Skills & Interests</h2>
+    <h2>🛠️ Skills & Interests</h2>
     <ul>
       <li>VB.Net | VB6 | MS SQL Server | Crystal Reports | Excel Automation | Visual Studio</li>
       <li>Automation | Debugging | UI Enhancements | Learning New Technologies</li>
@@ -159,7 +159,6 @@
 </div>
 
 <script>
-  // Typing effect
   const typingElement = document.getElementById("typing");
   const text = "Hello, I'm Sahithi Palakurthi";
   let index = 0;
@@ -171,7 +170,7 @@
       index++;
       if (index === text.length) {
         isDeleting = true;
-        setTimeout(typeLoop, 2000); // Wait before deleting
+        setTimeout(typeLoop, 2000);
         return;
       }
     } else {
@@ -185,7 +184,6 @@
   }
   typeLoop();
 
-  // Section switching
   function showSection(sectionId) {
     const sections = document.querySelectorAll(".section");
     sections.forEach(sec => sec.classList.remove("active"));
