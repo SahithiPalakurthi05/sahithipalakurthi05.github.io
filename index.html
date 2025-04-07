@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sahithi Palakurthi</title>
   <style>
     * {
@@ -52,7 +52,6 @@
       margin-top: 2rem;
       color: #777;
     }
-
     .main-content {
       flex: 1;
       background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d') no-repeat center center/cover;
@@ -60,7 +59,6 @@
       color: #333;
       position: relative;
     }
-
     .typing-text {
       font-size: 2rem;
       font-weight: bold;
@@ -70,73 +68,39 @@
       padding: 0.5rem 1rem;
       border-radius: 8px;
       margin-bottom: 2rem;
-      position: relative;
     }
-
     .cursor {
       display: inline-block;
-      width: 10px;
+      width: 2px;
+      height: 1.5em;
       background-color: black;
-      animation: blink 0.7s steps(2, start) infinite;
+      margin-left: 3px;
+      animation: blink 0.7s infinite;
     }
-
     @keyframes blink {
-      to {
-        background: transparent;
-      }
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
     }
-
     .section {
       background-color: rgba(255, 255, 255, 0.85);
       padding: 1.5rem;
       border-radius: 10px;
       margin-bottom: 2rem;
     }
-
     h3 {
       margin-top: 0;
     }
   </style>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const text = "Hello, I'm Sahithi Palakurthi";
-      const typingElement = document.getElementById("typing");
-      let index = 0;
-      let isDeleting = false;
-
-      function typeLoop() {
-        if (!isDeleting) {
-          typingElement.textContent = text.substring(0, index + 1);
-          index++;
-          if (index === text.length) {
-            setTimeout(() => { isDeleting = true; typeLoop(); }, 2000);
-          } else {
-            setTimeout(typeLoop, 100);
-          }
-        } else {
-          typingElement.textContent = text.substring(0, index - 1);
-          index--;
-          if (index === 0) {
-            isDeleting = false;
-            setTimeout(typeLoop, 1000);
-          } else {
-            setTimeout(typeLoop, 50);
-          }
-        }
-      }
-      typeLoop();
-    });
-  </script>
 </head>
 <body>
-
   <div class="sidebar">
     <div>
       <h2 onclick="location.reload()">Sahithi Palakurthi</h2>
       <div class="social-icons">
         <a href="https://github.com/SahithiPalakurthi05" target="_blank">🐱</a>
         <a href="https://www.linkedin.com/in/sahithipalakurthi05/" target="_blank">💼</a>
-        <a href="mailto:sahithipakakurthi05@gmail.com" target="_blank">✉️</a>
+        <a href="mailto:sahithipalakurthi05@gmail.com" target="_blank">✉️</a>
       </div>
       <nav>
         <a href="#experience">🧑‍💼 Experience</a>
@@ -183,5 +147,39 @@
     </div>
   </div>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const text = "Hello, I'm Sahithi Palakurthi";
+      const typingElement = document.getElementById("typing");
+      let index = 0;
+      let isDeleting = false;
+
+      function typeLoop() {
+        if (!isDeleting) {
+          typingElement.textContent = text.substring(0, index + 1);
+          index++;
+          if (index === text.length) {
+            setTimeout(() => {
+              isDeleting = true;
+              typeLoop();
+            }, 2000);
+          } else {
+            setTimeout(typeLoop, 100);
+          }
+        } else {
+          typingElement.textContent = text.substring(0, index - 1);
+          index--;
+          if (index === 0) {
+            isDeleting = false;
+            setTimeout(typeLoop, 1000);
+          } else {
+            setTimeout(typeLoop, 50);
+          }
+        }
+      }
+
+      typeLoop();
+    });
+  </script>
 </body>
 </html>
