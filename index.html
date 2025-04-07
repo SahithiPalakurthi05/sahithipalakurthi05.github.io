@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sahithi Palakurthi</title>
+  <title>Sahithi Palakurthi Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     * {
@@ -36,11 +36,28 @@
     }
     aside h1 {
       font-size: 1.2rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       cursor: pointer;
+      text-align: center;
     }
+
+    .socials-top {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .socials-top a {
+      color: #ccc;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+    .socials-top a:hover {
+      color: #00bcd4;
+    }
+
     aside nav {
       width: 100%;
+      flex-grow: 1;
     }
     aside nav a {
       display: block;
@@ -55,18 +72,15 @@
       background-color: #333;
       color: white;
     }
-    .socials {
+
+    .footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #888;
       margin-top: auto;
-      display: flex;
-      gap: 1rem;
-    }
-    .socials a {
-      color: #ccc;
-      font-size: 1.2rem;
-      transition: color 0.3s;
-    }
-    .socials a:hover {
-      color: #00bcd4;
+      padding-top: 1rem;
+      border-top: 1px solid #333;
+      width: 100%;
     }
 
     main {
@@ -114,16 +128,23 @@
 <aside>
   <img src="https://github.com/SahithiPalakurthi05.png" alt="Profile" onclick="showSection('home')" />
   <h1 onclick="showSection('home')">Sahithi Palakurthi</h1>
+  
+  <div class="socials-top">
+    <a href="https://github.com/SahithiPalakurthi05" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/sahithipalakurthi05/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="mailto:sahithipalakurthi05@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+  </div>
+
   <nav>
     <a href="#" onclick="showSection('about')">💡 About Me</a>
     <a href="#" onclick="showSection('experience')">🧑‍💼 Experience</a>
     <a href="#" onclick="showSection('education')">🎓 Education</a>
     <a href="#" onclick="showSection('certifications')">📜 Certifications</a>
   </nav>
-  <div class="socials">
-    <a href="https://github.com/SahithiPalakurthi05" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/sahithipalakurthi05/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="mailto:sahithipalakurthi05@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+
+  <div class="footer">
+    <p>Developed by Sahithi Palakurthi</p>
+    <p>© 2025 All rights reserved</p>
   </div>
 </aside>
 
