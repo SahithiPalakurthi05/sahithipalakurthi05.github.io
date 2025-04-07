@@ -136,10 +136,8 @@
   </div>
 
   <nav>
-    <a href="#" onclick="showSection('about')">💡 About Me</a>
     <a href="#" onclick="showSection('experience')">🧑‍💼 Experience</a>
-    <a href="#" onclick="showSection('skills')">🛠️ Skills</a>
-    <a href="#" onclick="showSection('interests')">🎯 Interests</a>
+    <a href="#" onclick="showSection('skills')">🛠️ Skills & Interests</a>
     <a href="#" onclick="showSection('education')">🎓 Education</a>
     <a href="#" onclick="showSection('certifications')">📜 Certifications</a>
   </nav>
@@ -153,9 +151,7 @@
 <main id="main-content">
   <div id="home">
     <div class="typing">Hello, I'm Sahithi Palakurthi</div>
-  </div>
-
-  <div id="about" style="display:none">
+    <br>
     <h2>💡 About Me</h2>
     <p>I am a Program Analyst with hands-on experience in VB.NET and VB6, specializing in maintaining legacy systems and developing automation tools.</p>
     <p>Efficient in LMSi, TV Prod, SQL Server, and Visual Studio with proven problem-solving skills and collaborative mindset.</p>
@@ -164,29 +160,18 @@
   <div id="experience" style="display:none">
     <h2>🧑‍💼 Experience</h2>
     <ul>
-      <li><strong>Program Analyst – Cognizant</strong><br>Dec 2022 – Present (2 yrs 5 mos)</li>
-      <li><strong>Intern – Cognizant</strong><br>Jan 2022 – Jun 2022 (6 mos)</li>
+      <li><strong>Program Analyst – Cognizant</strong><br>Dec 2022 – Present</li>
+      <li><strong>Intern – Cognizant</strong><br>Jan 2022 – Jun 2022</li>
     </ul>
   </div>
 
   <div id="skills" style="display:none">
-    <h2>🛠️ Skills</h2>
+    <h2>🛠️ Skills & Interests</h2>
     <ul>
-      <li>VB.NET, VB6</li>
-      <li>SQL Server</li>
-      <li>Visual Studio</li>
-      <li>Automation Scripting</li>
-      <li>Prompt Engineering</li>
-    </ul>
-  </div>
-
-  <div id="interests" style="display:none">
-    <h2>🎯 Interests</h2>
-    <ul>
-      <li>AI and Machine Learning</li>
-      <li>Web Development</li>
-      <li>Open Source Contribution</li>
-      <li>Problem Solving and Logic Puzzles</li>
+      <li>Programming Languages: VB.NET, VB6, SQL</li>
+      <li>Tools: Visual Studio, SQL Server Management Studio</li>
+      <li>Domains: LMSi, TV Production</li>
+      <li>Interests: UI Design, Automation, Legacy System Modernization</li>
     </ul>
   </div>
 
@@ -209,13 +194,11 @@
 
 <script>
   function showSection(id) {
-    const sections = ['home', 'about', 'experience', 'skills', 'interests', 'education', 'certifications'];
+    const sections = ['home', 'experience', 'skills', 'education', 'certifications'];
     sections.forEach(sec => {
       document.getElementById(sec).style.display = sec === id ? 'block' : 'none';
     });
   }
-
-  // Load home by default
   window.onload = () => showSection('home');
 </script>
 
