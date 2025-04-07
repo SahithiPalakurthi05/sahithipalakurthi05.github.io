@@ -2,140 +2,204 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sahithi Palakurthi | Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sahithi Palakurthi | Program Analyst</title>
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       height: 100vh;
-      background: #f4f4f4;
+      background-color: #f7f9fc;
     }
+
     .sidebar {
-      width: 250px;
-      background: #6d7b8d;
+      width: 280px;
+      background-color: #5c6b7a;
       color: white;
       padding: 2rem 1rem;
-      text-align: center;
-      position: fixed;
-      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
     }
+
+    .sidebar-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .sidebar img {
-      width: 120px;
-      height: 120px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid white;
-    }
-    .sidebar h2 {
-      margin-top: 1rem;
-      font-size: 1.5rem;
-    }
-    .socials {
-      margin: 1rem 0;
-    }
-    .socials a {
-      margin: 0 0.3rem;
-      color: white;
-      font-size: 1.2rem;
-    }
-    .nav-links {
-      margin-top: 2rem;
-      text-align: left;
-    }
-    .nav-links a {
-      display: block;
-      margin: 1rem 0;
-      color: white;
-      text-decoration: none;
-      font-size: 1.1rem;
-    }
-    .footer {
-      position: absolute;
-      bottom: 1rem;
-      font-size: 0.8rem;
-      width: 100%;
-    }
-    .main {
-      margin-left: 250px;
-      padding: 2rem;
-      flex: 1;
-    }
-    .contact {
-      max-width: 700px;
-      margin: auto;
-    }
-    .contact h2 {
       margin-bottom: 1rem;
-      font-size: 2rem;
     }
-    .contact-info {
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar-icons {
+      display: flex;
+      gap: 1rem;
       margin-bottom: 2rem;
     }
-    .contact-info p {
-      margin: 0.5rem 0;
+
+    .sidebar-icons a {
+      color: white;
+      font-size: 1.5rem;
+      text-decoration: none;
     }
-    .contact-form input, .contact-form textarea {
+
+    .sidebar nav {
       width: 100%;
-      padding: 0.8rem;
+    }
+
+    .sidebar nav a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .sidebar nav a:hover {
+      background-color: #4c5a68;
+    }
+
+    .sidebar-footer {
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    .sidebar-footer a {
+      color: #b2e7d2;
+      text-decoration: none;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 2rem;
+      overflow-y: auto;
+    }
+
+    .main-content h2 {
+      font-size: 2rem;
       margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+    }
+
+    .contact-details {
+      margin-bottom: 2rem;
+    }
+
+    .contact-details p {
+      margin: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border: 1px solid #999;
       font-size: 1rem;
     }
+
     .contact-form button {
-      background: #009688;
+      padding: 0.8rem 1.5rem;
+      background-color: teal;
       color: white;
       border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
-      font-size: 1rem;
+    }
+
+    .contact-form button:hover {
+      background-color: #006666;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+      }
+
+      .main-content {
+        padding: 1rem;
+      }
+
+      .sidebar nav {
+        display: none;
+      }
     }
   </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <div class="sidebar">
-    <img src="profile.jpg" alt="Sahithi Palakurthi">
-    <h2>Sahithi Palakurthi</h2>
-    <div class="socials">
-      <a href="https://linkedin.com/in/sahithipalakurthi05"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/SahithiPalakurthi05"><i class="fab fa-github"></i></a>
-      <a href="mailto:sahithipakakurthi05@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
-    <div class="nav-links">
-      <a href="#">🏠 Home</a>
-      <a href="#">🙋‍♀️ About me</a>
-      <a href="#">💼 Portfolio</a>
-      <a href="#">🏆 Achievements</a>
-      <a href="#">📬 Contact</a>
-    </div>
-    <div class="footer">
-      &copy; Copyright 2025<br>
-      Designed by Sahithi Palakurthi
-    </div>
-  </div>
-  <div class="main">
-    <div class="contact">
-      <h2>Contact</h2>
-      <div class="contact-info">
-        <p><strong>Email:</strong> sahithipakakurthi05@gmail.com</p>
-        <p><strong>Phone:</strong> +91 98765 43210</p>
-        <p><strong>Location:</strong> Hyderabad, Telangana</p>
-      </div>
-      <div class="contact-form">
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Your Email">
-        <textarea rows="5" placeholder="Your Message"></textarea>
-        <button>Send</button>
+
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <img src="/profile.jpg" alt="Sahithi Palakurthi">
+      <h2>Sahithi<br>Palakurthi</h2>
+      <div class="sidebar-icons">
+        <a href="https://www.linkedin.com/in/sahithipalakurthi05/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/SahithiPalakurthi05" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        <a href="mailto:sahithipakakurthi05@gmail.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
-  </div>
+
+    <nav>
+      <a href="#"><i class="fas fa-home"></i> Home</a>
+      <a href="#"><i class="fas fa-user"></i> About me</a>
+      <a href="#"><i class="fas fa-briefcase"></i> Portfolio</a>
+      <a href="#"><i class="fas fa-trophy"></i> Achievements</a>
+      <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <p>&copy; Copyright 2024<br>Designed By <a href="#">Sahithi Palakurthi</a></p>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <h2>Contact</h2>
+    <div class="contact-details">
+      <p><i class="fas fa-envelope"></i> sahithipakakurthi05@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana, India</p>
+    </div>
+
+    <form class="contact-form">
+      <input type="text" placeholder="Your name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </main>
+
 </body>
 </html>
