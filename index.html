@@ -2,220 +2,186 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sahithi Palakurthi</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
     body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
-      font-family: 'Segoe UI', sans-serif;
       height: 100vh;
-      overflow: hidden;
+      background: #f5f5f5;
     }
-    aside {
-      width: 260px;
+    .sidebar {
+      width: 250px;
       background-color: #1e1e2f;
       color: white;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      justify-content: space-between;
       padding: 2rem 1rem;
     }
-    aside img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      border: 3px solid #fff;
-      margin-bottom: 1rem;
+    .sidebar h2 {
       cursor: pointer;
     }
-    aside h1 {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      cursor: pointer;
-      text-align: center;
+    .sidebar nav a {
+      display: block;
+      color: #aaa;
+      text-decoration: none;
+      margin: 1rem 0;
+      font-size: 1rem;
     }
-
-    .socials-top {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    .socials-top a {
-      color: #ccc;
-      font-size: 1.2rem;
-      transition: color 0.3s;
-    }
-    .socials-top a:hover {
+    .sidebar nav a:hover {
       color: #00bcd4;
     }
-
-    aside nav {
-      width: 100%;
-      flex-grow: 1;
+    .social-icons {
+      margin-top: 1rem;
     }
-    aside nav a {
-      display: block;
-      color: #ccc;
-      text-decoration: none;
-      padding: 0.8rem 1rem;
-      border-radius: 6px;
-      margin: 0.3rem 0;
-      transition: background 0.3s;
-    }
-    aside nav a:hover {
-      background-color: #333;
+    .social-icons a {
+      margin: 0 0.3rem;
       color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
     }
-
     .footer {
+      font-size: 0.8rem;
       text-align: center;
-      font-size: 0.75rem;
-      color: #888;
-      margin-top: auto;
-      padding-top: 1rem;
-      border-top: 1px solid #333;
-      width: 100%;
+      margin-top: 2rem;
+      color: #777;
     }
 
-    main {
+    .main-content {
       flex: 1;
-      background: #f9f9f9 url('https://www.transparenttextures.com/patterns/cubes.png');
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d') no-repeat center center/cover;
       padding: 2rem;
-      overflow-y: auto;
-    }
-    .typing {
-      font-size: 1.6rem;
-      font-weight: bold;
-      height: 2.5rem;
       color: #333;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid;
-      width: 0;
+      position: relative;
     }
 
-    h2 {
-      margin: 1.5rem 0 1rem;
-      color: #444;
+    .typing-text {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #000;
+      background-color: rgba(255,255,255,0.8);
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      position: relative;
     }
-    p, li {
-      color: #555;
-      line-height: 1.6;
+
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      background-color: black;
+      animation: blink 0.7s steps(2, start) infinite;
     }
-    ul {
-      padding-left: 1rem;
+
+    @keyframes blink {
+      to {
+        background: transparent;
+      }
+    }
+
+    .section {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+
+    h3 {
+      margin-top: 0;
     }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const text = "Hello, I'm Sahithi Palakurthi";
+      const typingElement = document.getElementById("typing");
+      let index = 0;
+      let isDeleting = false;
+
+      function typeLoop() {
+        if (!isDeleting) {
+          typingElement.textContent = text.substring(0, index + 1);
+          index++;
+          if (index === text.length) {
+            setTimeout(() => { isDeleting = true; typeLoop(); }, 2000);
+          } else {
+            setTimeout(typeLoop, 100);
+          }
+        } else {
+          typingElement.textContent = text.substring(0, index - 1);
+          index--;
+          if (index === 0) {
+            isDeleting = false;
+            setTimeout(typeLoop, 1000);
+          } else {
+            setTimeout(typeLoop, 50);
+          }
+        }
+      }
+      typeLoop();
+    });
+  </script>
 </head>
 <body>
 
-<aside>
-  <img src="https://github.com/SahithiPalakurthi05.png" alt="Profile" onclick="showSection('home')" />
-  <h1 onclick="showSection('home')">Sahithi Palakurthi</h1>
-
-  <div class="socials-top">
-    <a href="https://github.com/SahithiPalakurthi05" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/sahithipalakurthi05/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="mailto:sahithipalakurthi05@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+  <div class="sidebar">
+    <div>
+      <h2 onclick="location.reload()">Sahithi Palakurthi</h2>
+      <div class="social-icons">
+        <a href="https://github.com/SahithiPalakurthi05" target="_blank">🐱</a>
+        <a href="https://www.linkedin.com/in/sahithipalakurthi05/" target="_blank">💼</a>
+        <a href="mailto:sahithipakakurthi05@gmail.com" target="_blank">✉️</a>
+      </div>
+      <nav>
+        <a href="#experience">🧑‍💼 Experience</a>
+        <a href="#skills">💻 Skills & Interests</a>
+        <a href="#education">🎓 Education</a>
+        <a href="#certifications">📜 Certifications</a>
+      </nav>
+    </div>
+    <div class="footer">
+      <p>Developed by Sahithi Palakurthi</p>
+      <p>&copy; 2025</p>
+    </div>
   </div>
 
-  <nav>
-    <a href="#" onclick="showSection('experience')">🧑‍💼 Experience</a>
-    <a href="#" onclick="showSection('skills')">💻 Skills & Interests</a>
-    <a href="#" onclick="showSection('education')">🎓 Education</a>
-    <a href="#" onclick="showSection('certifications')">📜 Certifications</a>
-  </nav>
+  <div class="main-content">
+    <div class="typing-text">
+      <span id="typing"></span><span class="cursor"></span>
+    </div>
 
-  <div class="footer">
-    <p>Developed by Sahithi Palakurthi</p>
-    <p>© 2025 All rights reserved</p>
+    <div class="section" id="experience">
+      <h3>🧑‍💼 Experience</h3>
+      <p><strong>Program Analyst - Cognizant</strong><br>Dec 2022 – Present · 2 yrs 5 mos</p>
+      <p><strong>Intern - Cognizant</strong><br>Jan 2022 – Jun 2022 · 6 mos</p>
+    </div>
+
+    <div class="section" id="skills">
+      <h3>💻 Skills & Interests</h3>
+      <p>VB.Net, VB6, MS SQL Server, LMSi, TV Prod, Crystal Reports, Excel Automation, Visual Studio</p>
+      <p>Interested in Legacy App Modernization, UI Design, AI Tools, and Process Optimization.</p>
+    </div>
+
+    <div class="section" id="education">
+      <h3>🎓 Education</h3>
+      <p>Bachelor of Technology (B.Tech), Computer Science – 2018 to 2022</p>
+    </div>
+
+    <div class="section" id="certifications">
+      <h3>📜 Certifications</h3>
+      <ul>
+        <li>Gen AI Specialization</li>
+        <li>Prompt Engineering</li>
+        <li>VB.NET Mastery – Internal Cognizant Training</li>
+      </ul>
+    </div>
   </div>
-</aside>
-
-<main id="main-content">
-  <div id="home">
-    <div class="typing" id="typing-text"></div>
-    <h2>💡 About Me</h2>
-    <p>I am a Program Analyst with hands-on experience in VB.NET and VB6, specializing in maintaining legacy systems and developing automation tools.</p>
-    <p>Efficient in LMSi, TV Prod, SQL Server, and Visual Studio with proven problem-solving skills and collaborative mindset.</p>
-  </div>
-
-  <div id="experience" style="display:none">
-    <h2>🧑‍💼 Experience</h2>
-    <ul>
-      <li><strong>Program Analyst – Cognizant</strong><br>Dec 2022 – Present (2 yrs 5 mos)</li>
-      <li><strong>Intern – Cognizant</strong><br>Jan 2022 – Jun 2022 (6 mos)</li>
-    </ul>
-  </div>
-
-  <div id="skills" style="display:none">
-    <h2>💻 Skills & Interests</h2>
-    <ul>
-      <li>VB.NET, VB6, SQL Server</li>
-      <li>Automation Tools, LMSi, TV Prod</li>
-      <li>Creative problem solving, Debugging legacy code</li>
-      <li>Exploring AI and building personal projects</li>
-    </ul>
-  </div>
-
-  <div id="education" style="display:none">
-    <h2>🎓 Education</h2>
-    <ul>
-      <li>Bachelor's Degree – Computer Science (details can be added here)</li>
-    </ul>
-  </div>
-
-  <div id="certifications" style="display:none">
-    <h2>📜 Certifications</h2>
-    <ul>
-      <li>Gen AI Specialization</li>
-      <li>Prompt Engineering</li>
-      <li>Other project and process-based recognitions</li>
-    </ul>
-  </div>
-</main>
-
-<script>
-  const text = "Hello, I'm Sahithi Palakurthi ";
-  const typingElement = document.getElementById("typing-text");
-
-  let index = 0;
-  let isDeleting = false;
-
-  function type() {
-    typingElement.textContent = text.substring(0, index);
-    typingElement.style.borderRight = "2px solid black";
-
-    if (!isDeleting && index < text.length) {
-      index++;
-      setTimeout(type, 100);
-    } else if (isDeleting && index > 0) {
-      index--;
-      setTimeout(type, 50);
-    } else {
-      isDeleting = !isDeleting;
-      setTimeout(type, isDeleting ? 1000 : 2000);
-    }
-  }
-
-  function showSection(id) {
-    const sections = ['home', 'experience', 'skills', 'education', 'certifications'];
-    sections.forEach(sec => {
-      document.getElementById(sec).style.display = sec === id ? 'block' : 'none';
-    });
-  }
-
-  window.onload = () => {
-    showSection('home');
-    type();
-  }
-</script>
 
 </body>
 </html>
