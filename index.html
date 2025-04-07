@@ -30,10 +30,21 @@
         flex-direction: column;
         justify-content: space-between;
       }
+      .sidebar .top-section {
+        text-align: center;
+      }
       .sidebar h1 {
         font-size: 1.5rem;
         margin-bottom: 0.5rem;
         cursor: pointer;
+      }
+      .profile-pic {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 1rem;
+        border: 2px solid white;
       }
       .social-icons {
         display: flex;
@@ -74,6 +85,19 @@
         color: #aaa;
         padding-top: 1rem;
       }
+      .resume-btn {
+        background-color: #00bcd4;
+        color: white;
+        padding: 0.5rem;
+        text-align: center;
+        border-radius: 5px;
+        margin-top: 1rem;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .resume-btn:hover {
+        background-color: #019bb0;
+      }
       .content {
         flex: 1;
         padding: 2rem;
@@ -81,6 +105,7 @@
         background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
         background-size: cover;
         background-repeat: repeat;
+        background-color: #fff;
       }
       .section {
         display: none;
@@ -93,28 +118,55 @@
         from { opacity: 0; transform: translateY(10px); }
         to { opacity: 1; transform: translateY(0); }
       }
+      form {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      input, textarea {
+        padding: 0.5rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      button[type="submit"] {
+        background-color: #1e1e2f;
+        color: white;
+        border: none;
+        padding: 0.5rem;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      button[type="submit"]:hover {
+        background-color: #333;
+      }
     </style>
   </head>
   <body>
     <div class="sidebar">
       <div>
-        <h1 onclick="showSection('home')">Sahithi Palakurthi</h1>
-        <div class="social-icons">
-          <a href="https://github.com/SahithiPalakurthi05" target="_blank" title="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/sahithipalakurthi05/" target="_blank" title="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="mailto:sahithipakakurthi05@gmail.com" target="_blank" title="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
+        <div class="top-section">
+          <img src="https://raw.githubusercontent.com/SahithiPalakurthi05/SahithiPalakurthi05/main/Profile.png" alt="Profile" class="profile-pic" />
+          <h1 onclick="showSection('home')">Sahithi Palakurthi</h1>
+          <div class="social-icons">
+            <a href="https://github.com/SahithiPalakurthi05" target="_blank" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/sahithipalakurthi05/" target="_blank" title="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:sahithipalakurthi05@gmail.com" target="_blank" title="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+          <a href="https://drive.google.com/file/d/1Nz9Il0mCEoQim-UqHO9OZ4_gENzXeDkY/view?usp=sharing" target="_blank" class="resume-btn">📄 Resume</a>
         </div>
         <div class="nav">
           <button onclick="showSection('experience')">🧑‍💼 Experience</button>
           <button onclick="showSection('skills')">💼 Skills & Interests</button>
           <button onclick="showSection('education')">🎓 Education</button>
           <button onclick="showSection('certifications')">📜 Certifications</button>
+          <button onclick="showSection('contact')">📬 Contact Me</button>
         </div>
       </div>
       <div class="footer">
@@ -125,10 +177,9 @@
     <div class="content">
       <div id="home" class="section active">
         <h2>👋 Hello, I'm Sahithi Palakurthi</h2>
-        <p>I'm a passionate Program Analyst with expertise in VB.Net, VB6, and software automation tools.</p>
-        <p>Experienced in handling legacy systems, building robust tools, and solving real-world business problems through technology.</p>
-        <p>Skilled in LMSi and TV Prod applications, SQL Server, Visual Studio, and automation using Excel and Crystal Reports.</p>
-        <p>I love working on impactful solutions and constantly strive to learn and grow in this ever-evolving tech space.</p>
+        <p>I'm a dynamic and dedicated Program Analyst with a solid foundation in VB.Net, VB6, and software automation tools. With hands-on experience in managing legacy systems, building custom tools, and addressing real-time business needs, I bring technical depth and a passion for solving challenges.</p>
+        <p>Tools & Domains I work with include LMSi, TV Prod, SQL Server, Visual Studio, Excel Automation, and Crystal Reports. I am enthusiastic about continuously learning and applying technology to make a difference in the workplace.</p>
+        <p>Let's connect and build something impactful!</p>
       </div>
       <div id="experience" class="section">
         <h2>🧑‍💼 Experience</h2>
@@ -138,7 +189,7 @@
       <div id="skills" class="section">
         <h2>💼 Skills & Interests</h2>
         <p>VB.Net | VB6 | MS SQL Server | LMSi | TV Prod | Crystal Reports | Excel Automation | Visual Studio</p>
-        <p>Interested in building powerful backend tools, solving business problems, and continuously learning new tech!</p>
+        <p>Interested in solving complex problems, creating automation scripts, and designing smart solutions.</p>
       </div>
       <div id="education" class="section">
         <h2>🎓 Education</h2>
@@ -150,6 +201,15 @@
           <li>Gen AI Specialization - Prompt Engineering</li>
           <li>Cognizant Gen AI Training Certifications</li>
         </ul>
+      </div>
+      <div id="contact" class="section">
+        <h2>📬 Contact Me</h2>
+        <form action="https://formsubmit.co/sahithipalakurthi05@gmail.com" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
       </div>
     </div>
     <script>
